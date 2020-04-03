@@ -9,7 +9,7 @@ executionName: K8s Prod Pipeline
 executionType: Pipeline
 triggerCondition:
 - type: SCHEDULED
-  cronDescription: every hour UTC
+  cronDescription: every hour at minute 5 UTC
   cronExpression: 5 * * * ?
   onNewArtifact: false
 workflowVariables:
