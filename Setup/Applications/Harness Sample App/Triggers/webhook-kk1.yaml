@@ -1,0 +1,21 @@
+harnessApiVersion: '1.0'
+type: TRIGGER
+artifactSelections:
+- artifactStreamName: harness_todolist
+  regex: false
+  serviceName: To-Do List K8s
+  type: LAST_COLLECTED
+executionName: K8s Prod Pipeline
+executionType: Pipeline
+triggerCondition:
+- type: WEBHOOK
+workflowVariables:
+- entityType: ENVIRONMENT
+  name: Dev
+  value: prod
+- entityType: INFRASTRUCTURE_DEFINITION
+  name: Infra
+  value: K8s
+- entityType: SERVICE
+  name: Service
+  value: To-Do List K8s
