@@ -10,7 +10,7 @@ executionType: Pipeline
 triggerCondition:
 - type: SCHEDULED
   cronDescription: every hour UTC
-  cronExpression: 0 * * * ?
+  cronExpression: 5 * * * ?
   onNewArtifact: false
 workflowVariables:
 - entityType: ENVIRONMENT
