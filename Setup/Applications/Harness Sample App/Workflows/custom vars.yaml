@@ -61,4 +61,19 @@ rollbackPhases:
   provisionNodes: false
   serviceName: To-Do List K8s
   statefulSet: false
-templatized: false
+templatized: true
+userVariables:
+- type: TEXT
+  allowedValues: val1,val2
+  fixed: false
+  mandatory: false
+  name: var1
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: var2
+- type: TEXT
+  fixed: true
+  mandatory: false
+  name: var3
+  value: var3
