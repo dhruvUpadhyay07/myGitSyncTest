@@ -8,12 +8,29 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 1
   workflowName: To-Do List K8s Rolling
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: ${Dev}
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: ${Infra}
 - type: APPROVAL
   name: Approval 1
   parallel: false
   properties:
     userGroups:
     - BwjV3bG0RYmhya4XPhKt-w
+    workflowVariables: null
+    pipelineStageElementId: 7GaiFAqESLWQcrM0V0hIxg
+    stageName: STAGE 2
+    disable: false
+    disableAssertion: null
+    pipelineStageParallelIndex: 2
+    pipelineId: T--tsZcDRcmZAWNl81LUZA
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 2
