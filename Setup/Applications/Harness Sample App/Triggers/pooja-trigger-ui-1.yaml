@@ -9,8 +9,8 @@ executionName: custom vars
 executionType: Workflow
 triggerCondition:
 - type: SCHEDULED
-  cronDescription: every hour at minute 1 UTC
-  cronExpression: 1 * * * ?
+  cronDescription: every hour at minute 2 UTC
+  cronExpression: 2 * * * ?
   onNewArtifact: false
 workflowVariables:
 - name: var3
