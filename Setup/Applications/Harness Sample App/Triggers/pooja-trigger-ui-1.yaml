@@ -11,7 +11,7 @@ triggerCondition:
 - type: SCHEDULED
   cronDescription: every minute UTC
   cronExpression: '* * * * ?'
-  onNewArtifact: true
+  onNewArtifact: false
 workflowVariables:
 - name: var3
   value: var3
