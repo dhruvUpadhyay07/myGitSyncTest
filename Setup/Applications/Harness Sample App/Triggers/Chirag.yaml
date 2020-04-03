@@ -1,0 +1,21 @@
+harnessApiVersion: '1.0'
+type: TRIGGER
+executionName: Chirag
+executionType: Pipeline
+triggerCondition:
+- type: WEBHOOK
+  action:
+  - opened
+  eventType:
+  - pull_request
+  repositoryType: GITHUB
+workflowVariables:
+- entityType: SERVICE
+  name: srv
+  value: To-Do List K8s
+- entityType: INFRASTRUCTURE_DEFINITION
+  name: infra
+  value: K8s
+- entityType: ENVIRONMENT
+  name: env
+  value: qa
