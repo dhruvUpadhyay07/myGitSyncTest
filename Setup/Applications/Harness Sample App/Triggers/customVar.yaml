@@ -1,0 +1,26 @@
+harnessApiVersion: '1.0'
+type: TRIGGER
+artifactSelections:
+- pipelineName: Chirag
+  regex: false
+  serviceName: To-Do List K8s
+  type: LAST_DEPLOYED
+executionName: Chirag
+executionType: Pipeline
+triggerCondition:
+- type: SCHEDULED
+  cronDescription: at 00:00 at 1 day UTC
+  cronExpression: 0 0 1 * ?
+  onNewArtifact: false
+workflowVariables:
+- name: Custom1
+  value: b
+- entityType: SERVICE
+  name: srv
+  value: To-Do List K8s
+- entityType: INFRASTRUCTURE_DEFINITION
+  name: infra
+  value: K8s
+- entityType: ENVIRONMENT
+  name: env
+  value: prod
