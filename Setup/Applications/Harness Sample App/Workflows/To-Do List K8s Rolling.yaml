@@ -20,7 +20,7 @@ phases:
 - type: KUBERNETES
   computeProviderName: Harness Sample K8s Cloud Provider
   daemonSet: false
-  infraDefinitionName: K8s
+  infraDefinitionName: K8s qa
   name: Rolling
   phaseSteps:
   - type: K8S_PHASE_STEP
@@ -57,7 +57,7 @@ rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Harness Sample K8s Cloud Provider
   daemonSet: false
-  infraDefinitionName: K8s
+  infraDefinitionName: K8s qa
   name: Rollback Rolling
   phaseNameForRollback: Rolling
   phaseSteps:

@@ -16,7 +16,7 @@ workflowVariables:
   value: To-Do List K8s
 - entityType: INFRASTRUCTURE_DEFINITION
   name: infra
-  value: K8s
+  value: K8s qa
 - entityType: ENVIRONMENT
   name: env
   value: qa
