@@ -19,4 +19,4 @@ workflowVariables:
   value: K8s
 - entityType: ENVIRONMENT
   name: env
-  value: prod
+  value: qa
