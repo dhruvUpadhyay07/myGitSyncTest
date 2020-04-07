@@ -17,6 +17,3 @@ workflowVariables:
 - entityType: INFRASTRUCTURE_DEFINITION
   name: infra
   value: K8s qa
-- entityType: ENVIRONMENT
-  name: env
-  value: qa
