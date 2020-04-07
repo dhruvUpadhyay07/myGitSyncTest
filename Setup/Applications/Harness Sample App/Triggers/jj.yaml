@@ -1,0 +1,29 @@
+harnessApiVersion: '1.0'
+type: TRIGGER
+artifactSelections:
+- artifactStreamName: harness_todolist
+  regex: false
+  serviceName: To-Do List K8s
+  type: WEBHOOK_VARIABLE
+executionName: Chirag
+executionType: Pipeline
+triggerCondition:
+- type: WEBHOOK
+workflowVariables:
+- name: Custom1
+  value: b
+- entityType: SERVICE
+  name: srv
+  value: To-Do List K8s
+- entityType: INFRASTRUCTURE_DEFINITION
+  name: i2
+  value: K8s
+- entityType: INFRASTRUCTURE_DEFINITION
+  name: infra
+  value: K8s
+- entityType: ENVIRONMENT
+  name: env
+  value: prod
+- entityType: SERVICE
+  name: s2
+  value: To-Do List K8s
