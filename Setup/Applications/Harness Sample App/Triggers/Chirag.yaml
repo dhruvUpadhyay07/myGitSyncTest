@@ -4,8 +4,6 @@ executionName: Chirag
 executionType: Pipeline
 triggerCondition:
 - type: WEBHOOK
-  action:
-  - opened
   branchName: master
   eventType:
   - push
