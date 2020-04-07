@@ -13,7 +13,7 @@ workflowVariables:
   value: a
 - entityType: ENVIRONMENT
   name: Environment
-  value: prod
+  value: ${env}
 - entityType: SERVICE
   name: Service
   value: To-Do List K8s
