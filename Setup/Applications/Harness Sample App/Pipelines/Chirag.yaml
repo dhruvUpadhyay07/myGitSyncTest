@@ -28,7 +28,7 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: prod
+    value: qa
   - entityType: SERVICE
     name: Service
     value: ${s2}
