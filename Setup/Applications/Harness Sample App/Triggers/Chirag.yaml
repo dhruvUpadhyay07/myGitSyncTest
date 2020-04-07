@@ -10,7 +10,7 @@ triggerCondition:
   repositoryType: GITHUB
 workflowVariables:
 - name: Custom1
-  value: a
+  value: b
 - entityType: SERVICE
   name: srv
   value: To-Do List K8s
