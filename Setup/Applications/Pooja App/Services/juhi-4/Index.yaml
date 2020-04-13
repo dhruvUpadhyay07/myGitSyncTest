@@ -1,0 +1,14 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+artifactType: WAR
+configVariables:
+- name: ghjdfg
+  value: gcpkms:NZ7UtS6RQkqmKEflkqKbeg
+  valueType: ENCRYPTED_TEXT
+- name: ghj
+  value: gcpkms:NZ7UtS6RQkqmKEflkqKbeg
+  valueType: ENCRYPTED_TEXT
+- name: dfgh
+  value: se
+  valueType: TEXT
+deploymentType: SSH

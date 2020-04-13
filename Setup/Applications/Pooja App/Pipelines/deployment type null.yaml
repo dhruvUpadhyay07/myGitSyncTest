@@ -1,0 +1,34 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: ENV_STATE
+  name: k8s (Workflow Template)
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 1
+  workflowName: k8s
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: ${env}
+  - entityType: SERVICE
+    name: Service
+    value: ${srv}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: ${infra}
+- type: ENV_STATE
+  name: aws basic (Workflow Template)
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: aws basic
+  workflowVariables:
+  - entityType: SERVICE
+    name: Service
+    value: ${srv2}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_ECS
+    value: ${infra2}

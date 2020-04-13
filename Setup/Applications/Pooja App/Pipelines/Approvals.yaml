@@ -1,0 +1,72 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: APPROVAL
+  name: Approval 0
+  parallel: false
+  properties:
+    userGroups:
+    - gBT4LUeOTLGltQPxPx2CdQ
+    variables: null
+    pipelineStageElementId: N6854R7iS6aouMWz0F3D_w
+    stageName: User group approval
+    disable: false
+    timeoutMillis: 86400000
+    disableAssertion: null
+    pipelineStageParallelIndex: 1
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+    pipelineId: Nbk5c2jIR8-D326n26Ehaw
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: User group approval
+- type: APPROVAL
+  name: Approval 1
+  parallel: false
+  properties:
+    workflowVariables: null
+    approvalStateParams:
+      jiraApprovalParams:
+        jiraConnectorId: pX0ZoSKDSWC-cAlmQxNHeQ
+        project: TJI
+        issueId: TJI-29790
+        approvalField: status
+        rejectionField: status
+        approvalOperator: equalsTo
+        rejectionOperator: equalsTo
+        approvalValue: Approved
+        rejectionValue: Rejected
+        parallel: false
+    pipelineStageElementId: YKvdy9JgRCi34sHP_wFlvQ
+    stageName: Jira approval
+    disable: false
+    timeoutMillis: 86400000
+    disableAssertion: null
+    pipelineStageParallelIndex: 2
+    approvalStateType: JIRA
+    pipelineId: Nbk5c2jIR8-D326n26Ehaw
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: Jira approval
+- type: APPROVAL
+  name: Approval 2
+  parallel: false
+  properties:
+    workflowVariables: null
+    approvalStateParams:
+      shellScriptApprovalParams:
+        scriptString: |
+          export HARNESS_APPROVAL_STATUS='APPROVED'
+        parallel: false
+        retryInterval: 30000
+    pipelineStageElementId: 1t5DgDYzSfCrIJppZayb6g
+    stageName: Shell script approval
+    disable: false
+    timeoutMillis: 86400000
+    disableAssertion: null
+    pipelineStageParallelIndex: 3
+    approvalStateType: SHELL_SCRIPT
+    pipelineId: Nbk5c2jIR8-D326n26Ehaw
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: Shell script approval

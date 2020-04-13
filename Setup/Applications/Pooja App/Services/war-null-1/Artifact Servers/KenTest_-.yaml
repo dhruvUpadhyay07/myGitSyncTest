@@ -1,0 +1,7 @@
+harnessApiVersion: '1.0'
+type: ARTIFACTORY
+artifactPattern: '*'
+metadataOnly: false
+repositoryName: KenTest
+repositoryType: any
+serverName: Harness Artifactory

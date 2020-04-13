@@ -1,0 +1,35 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: ENV_STATE
+  name: build test 1
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 1
+  workflowName: build test 1
+- type: ENV_STATE
+  name: build test 2 (Workflow Template)
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: build test 2
+  workflowVariables:
+  - name: testvar
+    value: ${var1.test}
+  - name: appname
+    value: ${app.name}
+  - name: workflowname
+    value: ${workflow.name}
+- type: ENV_STATE
+  name: multiphase
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 3
+  workflowName: TestMulti
+  workflowVariables:
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_ECS
+    value: aws ssh

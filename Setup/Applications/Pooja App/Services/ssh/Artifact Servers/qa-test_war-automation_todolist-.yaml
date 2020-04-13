@@ -1,0 +1,7 @@
+harnessApiVersion: '1.0'
+type: ARTIFACTORY
+artifactPattern: war-automation/todolist*
+metadataOnly: false
+repositoryName: qa-test
+repositoryType: any
+serverName: Harness Artifactory

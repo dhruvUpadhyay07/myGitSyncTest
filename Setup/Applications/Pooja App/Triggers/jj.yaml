@@ -1,0 +1,14 @@
+harnessApiVersion: '1.0'
+type: TRIGGER
+executionName: aws basic
+executionType: Workflow
+triggerCondition:
+- type: PIPELINE_COMPLETION
+  pipelineName: Approvals
+workflowVariables:
+- entityType: SERVICE
+  name: Service
+  value: AWS
+- entityType: INFRASTRUCTURE_DEFINITION
+  name: InfraDefinition_ECS
+  value: aws

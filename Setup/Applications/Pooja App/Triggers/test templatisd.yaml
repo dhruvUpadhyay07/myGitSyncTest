@@ -1,0 +1,13 @@
+harnessApiVersion: '1.0'
+type: TRIGGER
+executionName: TestMulti
+executionType: Workflow
+triggerCondition:
+- type: SCHEDULED
+  cronDescription: at 00:00 at 1 day at January month UTC
+  cronExpression: 0 0 1 1 ?
+  onNewArtifact: false
+workflowVariables:
+- entityType: INFRASTRUCTURE_DEFINITION
+  name: InfraDefinition_ECS
+  value: aws

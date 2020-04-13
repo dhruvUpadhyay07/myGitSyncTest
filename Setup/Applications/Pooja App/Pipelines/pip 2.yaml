@@ -1,0 +1,34 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: ENV_STATE
+  name: ssh basic (Workflow Template)
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 1
+  workflowName: ssh basic
+  workflowVariables:
+  - entityType: SERVICE
+    name: Service
+    value: ${s}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_SSH
+    value: aws ssh
+- type: ENV_STATE
+  name: k8s (Workflow Template)
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: k8s
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: Prod
+  - entityType: SERVICE
+    name: Service
+    value: test
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: k8s

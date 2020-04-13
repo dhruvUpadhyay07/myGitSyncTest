@@ -1,0 +1,15 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+artifactType: DOCKER
+configVariables:
+- name: nothing
+  value: none
+  valueType: TEXT
+- name: test
+  value: hashicorpvault://Vault Read Only/utkarsh/check#test
+  valueType: ENCRYPTED_TEXT
+deploymentType: KUBERNETES
+helmVersion: V2
+tags:
+  artifactType: DOCKER
+  deploymentType: KUBERNETES

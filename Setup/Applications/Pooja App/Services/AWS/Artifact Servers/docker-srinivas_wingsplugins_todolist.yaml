@@ -1,0 +1,7 @@
+harnessApiVersion: '1.0'
+type: ARTIFACTORY
+imageName: wingsplugins/todolist
+metadataOnly: true
+repositoryName: docker-srinivas
+repositoryType: docker
+serverName: Harness Artifactory
