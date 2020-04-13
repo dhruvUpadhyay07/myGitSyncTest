@@ -21,7 +21,7 @@ phases:
   computeProviderName: Physical Data Center_randafddsfdsf
   daemonSet: false
   infraDefinitionName: pdc
-  name: Phase 1
+  name: Phase123
   phaseSteps:
   - type: INFRASTRUCTURE_NODE
     name: Prepare Infra
@@ -71,8 +71,8 @@ rollbackPhases:
   computeProviderName: Physical Data Center_randafddsfdsf
   daemonSet: false
   infraDefinitionName: pdc
-  name: Rollback Phase 1
-  phaseNameForRollback: Phase 1
+  name: Rollback Phase123
+  phaseNameForRollback: Phase123
   phaseSteps:
   - type: DISABLE_SERVICE
     name: Disable Service
