@@ -57,6 +57,14 @@ phases:
   serviceName: war-null-1
   statefulSet: false
   templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: WAR
+    - name: entityType
+      value: SERVICE
   - expression: ${InfraDefinition_SSH}
     fieldName: infraDefinitionId
     metadata:
@@ -111,6 +119,14 @@ rollbackPhases:
   serviceName: war-null-1
   statefulSet: false
   templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: WAR
+    - name: entityType
+      value: SERVICE
   - expression: ${InfraDefinition_SSH}
     fieldName: infraDefinitionId
     metadata:
@@ -131,6 +147,14 @@ templateExpressions:
   - name: relatedField
   - name: entityType
     value: INFRASTRUCTURE_DEFINITION
+- expression: ${Service}
+  fieldName: serviceId
+  metadata:
+  - name: relatedField
+  - name: artifactType
+    value: WAR
+  - name: entityType
+    value: SERVICE
 templatized: true
 userVariables:
 - type: ENTITY
@@ -138,6 +162,11 @@ userVariables:
   fixed: false
   mandatory: true
   name: Environment
+- type: ENTITY
+  description: Variable for Service entity
+  fixed: false
+  mandatory: true
+  name: Service
 - type: ENTITY
   description: Variable for Infrastructure Definition entity
   fixed: false
