@@ -37,7 +37,7 @@ phases:
         userGroups:
         - 2Z4yiRojQq2jmMx1JO05Jw
     - type: APPROVAL
-      name: Jira Approval
+      name: Jira Approval1
       properties:
         approvalStateParams:
           jiraApprovalParams:
