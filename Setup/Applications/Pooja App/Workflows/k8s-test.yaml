@@ -47,6 +47,14 @@ phases:
   provisionNodes: false
   serviceName: k8s
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 - type: KUBERNETES
   computeProviderName: playground
   daemonSet: false
@@ -68,6 +76,14 @@ phases:
   provisionNodes: false
   serviceName: k8s
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes2}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 - type: KUBERNETES
   computeProviderName: playground
   daemonSet: false
@@ -80,6 +96,14 @@ phases:
   provisionNodes: false
   serviceName: k8s
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes3}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: playground
@@ -100,6 +124,14 @@ rollbackPhases:
   provisionNodes: false
   serviceName: k8s
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 - type: KUBERNETES
   computeProviderName: playground
   daemonSet: false
@@ -122,6 +154,14 @@ rollbackPhases:
   provisionNodes: false
   serviceName: k8s
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes2}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 - type: KUBERNETES
   computeProviderName: playground
   daemonSet: false
@@ -136,4 +176,40 @@ rollbackPhases:
   provisionNodes: false
   serviceName: k8s
   statefulSet: false
-templatized: false
+  templateExpressions:
+  - expression: ${InfraDefinition_Kubernetes3}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
+templateExpressions:
+- expression: ${Environment}
+  fieldName: envId
+  metadata:
+  - name: relatedField
+  - name: entityType
+    value: ENVIRONMENT
+templatized: true
+userVariables:
+- type: ENTITY
+  description: Variable for Environment entity
+  fixed: false
+  mandatory: true
+  name: Environment
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Canary
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_Kubernetes
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Primary
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_Kubernetes2
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Phase 3
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_Kubernetes3
