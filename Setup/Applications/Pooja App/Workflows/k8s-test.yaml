@@ -55,6 +55,14 @@ phases:
       value: DOCKER
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: SERVICE
 - type: KUBERNETES
   computeProviderName: playground
   daemonSet: false
@@ -132,6 +140,14 @@ rollbackPhases:
       value: DOCKER
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: DOCKER
+    - name: entityType
+      value: SERVICE
 - type: KUBERNETES
   computeProviderName: playground
   daemonSet: false
@@ -198,6 +214,11 @@ userVariables:
   fixed: false
   mandatory: true
   name: Environment
+- type: ENTITY
+  description: Variable for Service entity in Rollback Canary
+  fixed: false
+  mandatory: true
+  name: Service
 - type: ENTITY
   description: Variable for Infrastructure Definition entity in Rollback Canary
   fixed: false
