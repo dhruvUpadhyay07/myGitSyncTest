@@ -1,3 +1,3 @@
 # gitSyncTest
 
-This is a sample repository for testing git webhook
+This is a sample repository for testing git web-hook
